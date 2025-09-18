@@ -31,34 +31,20 @@
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       overflow: hidden;
-      z-index: 1;
+      z-index: 2;
     }
-    
 
     .flap {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 60%;
-      background: pink;
-      clip-path: polygon(0 0, 50% 100%, 100% 0); /* tam giác chữ V */
-      border: 2px solid #ff7f9d;
-      border-bottom: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      z-index: 2;
-    }
-
-      .lass {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: #ff6f61;
-      border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      clip-path: polygon(0 0, 0% 0, 50% 100%, 100% 0, 100% 0, 100% 100%, 0 100%);
-      overflow: hidden;
-      z-index: 2;
+      height: 50%;
+      background: #ff4f47;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top;
+      transition: transform 0.8s ease;
+      z-index: 3;
     }
     .flap.open {
       transform: rotateX(180deg);
@@ -66,9 +52,10 @@
 
     .card {
       position: absolute;
+      top: 100%; /* hoàn toàn ẩn */
       left: 50%;
       transform: translateX(-50%);
-      width: 60%;
+      width: 85%;
       height: 90%;
       background: white;
       border-radius: 10px;
@@ -78,6 +65,14 @@
       transition: transform 0.6s ease, top 0.6s ease;
       z-index: 1;
     }
+
+    /* Nhô nhẹ 1 góc ra (xoay 3D nhẹ) */
+    .card.peek {
+      top: 95%;
+      transform: translateX(-50%) rotateX(-5deg) scale(0.95);
+    }
+
+    /* Trượt ra ngoài */
     .card.slide-out {
       top: -140px;
       transform: translateX(-50%) rotateX(0deg) scale(1);
@@ -156,7 +151,7 @@
   <div class="envelope-container">
     <div class="envelope">
       <div class="flap" id="flap"></div>
-      <div class="lass" id="lass"></div>
+
       <div class="card" id="card">
         <h1>🎉 Thiệp Mời Sinh Nhật 🎉</h1>
         <p class="details"><strong>Chủ tiệc:</strong> Jane</p>
