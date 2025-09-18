@@ -14,6 +14,7 @@ function openEnvelope() {
   }, 1000);
 
   setTimeout(() => {
+    envelope.classList.remove("bounce"); 
     card.classList.add("fullscreen");
   }, 1800);
 }
