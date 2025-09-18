@@ -36,7 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const imgElement = document.getElementById('invite-image');
   if (imgElement) {
     imgElement.src = inviteData.image;
-    imgElement.onload = () => imgElement.classList.add('loaded'); // khi ảnh load xong mới fade-in
   }
   
 
