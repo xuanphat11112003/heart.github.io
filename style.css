@@ -26,6 +26,9 @@ body {
   height: 220px;
   /*animation: bounce-scale 2.2s ease-in-out infinite;*/
 }
+.envelope-container.bounce {
+  animation: bounce-scale 2.2s ease-in-out infinite;
+}
 
 .envelope {
   position: relative;
