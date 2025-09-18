@@ -52,6 +52,10 @@ body {
   transform-origin: top;
   transition: transform 0.8s ease;
   z-index: 3;
+  border-radius:15px
+}
+.flap::after {
+  top: 5px;
 }
 
 .lass {
