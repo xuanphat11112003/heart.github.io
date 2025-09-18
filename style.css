@@ -54,9 +54,6 @@ body {
   z-index: 3;
   border-radius:15px
 }
-.flap::after {
-  top: 5px;
-}
 
 .lass {
   position: absolute;
