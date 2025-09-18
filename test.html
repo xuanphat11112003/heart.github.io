@@ -31,6 +31,7 @@
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       overflow: hidden;
+      z-index: 2;
     }
 
     /* Nắp bao thư */
@@ -44,7 +45,7 @@
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       transform-origin: top;
       transition: transform 0.8s ease;
-      z-index: 2;
+      z-index: 3;
     }
 
     .flap.open {
@@ -54,7 +55,7 @@
     /* Tấm thiệp */
     .card {
       position: absolute;
-      top: 10px;
+      top: 100%; /* Bắt đầu ẩn hoàn toàn dưới phong bì */
       left: 50%;
       transform: translateX(-50%);
       width: 85%;
@@ -71,7 +72,7 @@
     /* Sau khi mở - thiệp trượt ra */
     .card.show {
       top: -140px;
-      transform: translateX(-50%) scale(1.1);
+      transform: translateX(-50%) scale(1.05);
     }
 
     /* Khi thiệp fullscreen */
@@ -135,7 +136,7 @@
       align-items: center;
       font-size: 1.5rem;
       cursor: pointer;
-      z-index: 3;
+      z-index: 4;
       box-shadow: 0 3px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
@@ -170,11 +171,12 @@
 
       // đợi nắp mở xong mới trượt thiệp ra
       setTimeout(() => {
-        document.getElementById("card").classList.add("show");
+        const card = document.getElementById("card");
+        card.classList.add("show");
 
         // sau khi trượt ra, phóng to fullscreen
         setTimeout(() => {
-          document.getElementById("card").classList.add("fullscreen");
+          card.classList.add("fullscreen");
         }, 700);
 
       }, 500);
