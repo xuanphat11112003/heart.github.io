@@ -193,7 +193,8 @@ body {
 
 .circle-btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 32%;
+  opcity: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
