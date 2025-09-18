@@ -218,3 +218,21 @@ body {
 .circle-btn:hover {
   transform: translateX(-50%) scale(1.1);
 }
+
+.invite-image {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto 1rem; 
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.invite-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
