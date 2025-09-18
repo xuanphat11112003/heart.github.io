@@ -52,7 +52,7 @@ body {
   transform-origin: top;
   transition: transform 0.8s ease;
   z-index: 3;
-  border-radius:15px
+  border-radius:15px;
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
@@ -66,7 +66,7 @@ body {
   transform: rotateX(180deg);
   backface-visibility: hidden;
   z-index:1;
-  top:5px;
+  top: 5px;
   backface-visibility: hidden;
 }
 
