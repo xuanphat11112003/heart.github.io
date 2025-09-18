@@ -159,23 +159,35 @@ body {
   color: #222;
 }
 
-.invite-text,
-.invite-location,
-.invite-time,
-.invite-footer {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  margin: 0.3rem 0;
-  color: #444;
-}
-
 .invite-location {
   font-weight: bold;
 }
 
 .invite-time {
   font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0;
+  border-top: 1px dashed #ffb6c8;
+  border-bottom: 1px dashed #ffb6c8;
+}
+.invite-footer {
+  font-size: 0.9rem;
   margin-top: 0.5rem;
+  font-style: italic;
+  color: #666;
+}
+.invite-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.invite-location {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #000;
+  margin-top: 0.3rem;
 }
 
 .btn {
