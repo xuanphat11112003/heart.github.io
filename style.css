@@ -42,7 +42,7 @@ body {
 }
 
 .flap {
-  background: url(./img/bgt.png) no-repeat center center;
+  background: url("./img/bgt.png") no-repeat center center;
   background-size: cover;
   position: absolute;
   top: -2px;
@@ -194,7 +194,7 @@ body {
 .circle-btn {
   position: absolute;
   bottom: 25%;
-  opcity: 0;
+  opacity: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
