@@ -1,7 +1,7 @@
 function openEnvelope() {
   const flap = document.getElementById("flap");
   const card = document.getElementById("card");
-
+  const envelope = document.querySelector(".envelope-container");
   flap.classList.add("open");
 
   setTimeout(() => {
