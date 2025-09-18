@@ -19,15 +19,15 @@
 
     .envelope-container {
       position: relative;
-      width: 300px;
-      height: 200px;
+      width: 250px; /* Giảm kích thước */
+      height: 180px; /* Giảm kích thước */
     }
 
     .envelope {
       position: relative;
       width: 100%;
       height: 100%;
-      background: #ff6f61;
+      background: #ff85b3; /* Màu hồng */
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       overflow: hidden;
@@ -40,100 +40,141 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background: #ff4f47;
+      background: #ff6f91; /* Màu hồng đậm hơn */
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       transform-origin: top;
       transition: transform 0.8s ease;
       z-index: 3;
     }
-      .lass {
+
+    .lass {
       position: absolute;
       width: 100%;
       height: 115%;
-      background: #ff6f61;
+      background: #ff85b3; /* Màu hồng */
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       clip-path: polygon(0 0, 0% 0, 50% 60%, 100% 0, 100% 0, 100% 100%, 0 100%);
       overflow: hidden;
       z-index: 2;
     }
+
     .flap.open {
       transform: rotateX(180deg);
     }
 
     .card {
       position: absolute;
-      top: 100%; /* hoàn toàn ẩn */
+      top: 100%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scale(0.9); /* ban đầu nhỏ */
       width: 60%;
       height: 90%;
       background: white;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      text-align: center;
       padding: 1rem;
+      text-align: center;
       transition: transform 0.6s ease, top 0.6s ease;
       z-index: 1;
+      overflow: hidden;
     }
-
-    /* Nhô nhẹ 1 góc ra (xoay 3D nhẹ) */
+    
+    .card-content {
+      transform: scale(0.8); /* THU NHỎ chữ khi mới nhô lên */
+      transform-origin: center;
+      transition: transform 0.6s ease;
+    }
+    
     .card.peek {
       top: 5%;
-      transform: translateX(-50%) rotateX(-5deg) scale(0.95);
+      transform: translateX(-50%) rotateX(-5deg) scale(0.85);
     }
-
-    /* Trượt ra ngoài */
+    
     .card.slide-out {
       top: -140px;
-      transform: translateX(-50%) rotateX(0deg) scale(1);
+      transform: translateX(-50%) rotateX(0deg) scale(0.9);
     }
-
-    /* Phóng to fullscreen */
+    
     .card.fullscreen {
       position: fixed;
       top: 0;
       left: 0;
-      transform: none;
       width: 100vw;
       height: 100vh;
       border-radius: 0;
+      transform: none;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 1.1rem;
       z-index: 10;
-      transition: all 0.6s ease;
+    }
+    
+    .card.fullscreen .card-content {
+      transform: scale(1); /* khi full màn hình thì trả lại size bình thường */
+    }
+    
+    .invite-title {
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #555;
+    }
+    
+    .invite-name {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+      color: #222;
+    }
+    
+    .invite-text,
+    .invite-location,
+    .invite-time,
+    .invite-footer {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+      color: #444;
+    }
+    
+    .invite-location {
+      font-weight: bold;
+    }
+    
+    .invite-time {
+      font-weight: bold;
+      margin-top: 0.5rem;
     }
 
+
     h1 {
-      font-size: 1.5rem;
-      color: #ff6f61;
-      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: #ff85b3; /* Màu hồng */
+      margin: 0.3rem 0;
     }
 
     .details {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #444;
-      margin: 5px 0;
+      margin: 0.3rem 0;
     }
 
     .btn {
       display: inline-block;
-      background: #ff6f61;
+      background: #ff85b3; /* Màu hồng */
       color: white;
-      padding: 10px 20px;
+      padding: 8px 16px;
       margin-top: 15px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease;
+      font-size: 0.9rem;
     }
     .btn:hover {
-      background: #ff3c2f;
+      background: #ff6f91; /* Màu hồng đậm hơn */
     }
-
     .circle-btn {
       position: absolute;
       bottom: 10px;
@@ -164,14 +205,20 @@
       <div class="flap" id="flap"></div>
       <div class="lass" id="lass"></div>
 
-      <div class="card" id="card">
-        <h1>🎉 Thiệp Mời Sinh Nhật 🎉</h1>
-        <p class="details"><strong>Chủ tiệc:</strong> Jane</p>
-        <p class="details"><strong>Ngày:</strong> 20/09/2025</p>
-        <p class="details"><strong>Giờ:</strong> 18:00</p>
-        <p class="details"><strong>Địa điểm:</strong> Quán Cafe ABC, 123 Đường XYZ</p>
-        <a href="https://forms.gle/abcd1234" target="_blank" class="btn">Xác nhận tham dự</a>
-      </div>
+        <div class="card" id="card">
+          <div class="card-content">
+            <h2 class="invite-title">Nhân dịp sinh nhật</h2>
+            <h1 class="invite-name">Xuân Phát Mẫn</h1>
+            <p class="invite-text"><strong>Kính mời:</strong> ................................</p>
+            <p class="invite-text">Đến dự bữa tiệc thân mật cùng ba trái tim thiên yết tại</p>
+            <p class="invite-location"><br>The Gangs AirPorts</p>
+            <div class="invite-time">
+              <span>19 giờ 00</span> | <span>Chủ nhật</span><br>
+              <strong>Ngày 8 - Tháng 11 - 2025</strong>
+            </div>
+            <p class="invite-footer">Sự hiện diện của quý khách là món quà to lớn nhất dành cho tôi</p>
+          </div>
+        </div>
 
       <div class="circle-btn" onclick="openEnvelope()">📩</div>
     </div>
