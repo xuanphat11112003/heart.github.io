@@ -46,6 +46,17 @@
       transition: transform 0.8s ease;
       z-index: 3;
     }
+      .lass {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ff6f61;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      clip-path: polygon(0 0, 0% 0, 50% 100%, 100% 0, 100% 0, 100% 100%, 0 100%);
+      overflow: hidden;
+      z-index: 2;
+    }
     .flap.open {
       transform: rotateX(180deg);
     }
@@ -151,6 +162,7 @@
   <div class="envelope-container">
     <div class="envelope">
       <div class="flap" id="flap"></div>
+      <div class="lass" id="lass"></div>
 
       <div class="card" id="card">
         <h1>🎉 Thiệp Mời Sinh Nhật 🎉</h1>
