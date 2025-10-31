@@ -22,8 +22,14 @@ function getInviteDataById(id) {
   // Danh sách dữ liệu: mỗi id có ảnh + tên khách
   const data = {
     1: { image: './img/img1.jpg', guest: 'Gia Vy Nguyễn' },
-    2: { image: './img/img2.jpg', guest: 'Lê Phi Hùng Phong' },
-    3: { image: './img/img3.jpg', guest: 'Lê Văn C' }
+    2: { image: './img/img2.png', guest: 'Anh Rich Khưu' },
+    3: { image: './img/img3.jpg', guest: 'Phi Hùng' },
+    4: { image: './img/img4.jpg', guest: 'Người Đẹp Tiktok' },
+    5: { image: './img/img5.jpg', guest: 'Bà chủ Spa Êm' },
+    6: { image: './img/img6.jpg', guest: 'Thái Xuân Mai' },
+    7: { image: './img/img7.png', guest: 'Nguyễn Thế Hoàng' },
+    8: { image: './img/img8.png', guest: 'Doung Ng' },
+    9: { image: './img/img9.png', guest: 'Ôn Thy Lèm' }
   };
   return data[id] || { image: './img/default.jpg', guest: 'Quý khách' };
 }
