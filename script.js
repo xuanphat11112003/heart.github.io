@@ -30,7 +30,7 @@ function getInviteDataById(id) {
     7: { image: './img/img7.png', guest: 'Nguyễn Thế Hoàng' },
     8: { image: './img/img8.png', guest: 'Doung Ng' },
     9: { image: './img/img9.png', guest: 'Ôn Thy Lèm' },
-    10: { image: './img/img10.png', guest: 'Huu Duck' }
+    10: { image: './img/img10.jpg', guest: 'Huu Duck' }
   };
   return data[id] || { image: './img/default.jpg', guest: 'Quý khách' };
 }
